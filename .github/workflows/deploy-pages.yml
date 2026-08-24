@@ -36,6 +36,25 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Normalize Cafe Pachmarhi asset paths
+        run: |
+          if [ -d "out/cafe-pachmarhi" ]; then
+            cp -a out/cafe-pachmarhi/. out/
+          fi
+
+      - name: Verify exported site and images
+        run: |
+          test -f out/index.html
+          test -f out/hero.jpg
+          test -f out/cafe-01.jpg
+          test -f out/cafe-02.jpg
+          test -f out/cafe-03.jpg
+          test -f out/cafe-04.jpg
+          test -f out/cafe-05.jpg
+          test -f out/cafe-pachmarhi/hero.jpg
+          test -f out/cafe-pachmarhi/cafe-01.jpg
+          echo "Static export and Cafe Pachmarhi images verified."
+
       - name: Add nojekyll marker
         run: touch out/.nojekyll
 
