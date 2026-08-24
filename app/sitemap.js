@@ -1,7 +1,7 @@
-const pages = ['', '/about', '/menu', '/featured', '/offers', '/gallery', '/reviews', '/blog', '/contact'];
+const pages = ['', '/about/', '/menu/', '/featured/', '/offers/', '/gallery/', '/reviews/', '/blog/', '/contact/'];
 
 export default function sitemap() {
-  const base = 'https://cafe-pachmarhi.www-satitechinfo.chatgpt.site';
+  const base = 'https://satitech-official.github.io/cafe-pachmarhi';
   return pages.map((path) => ({
     url: `${base}${path || '/'}`,
     lastModified: new Date(),

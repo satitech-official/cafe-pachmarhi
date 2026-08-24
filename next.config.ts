@@ -1,5 +1,15 @@
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {};
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
+const basePath = isGitHubPages ? '/cafe-pachmarhi' : '';
+
+const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  basePath,
+  images: {
+    unoptimized: true,
+  },
+};
 
 export default nextConfig;
