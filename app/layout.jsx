@@ -1,4 +1,5 @@
 import './globals.css';
+import './mobile-fixes.css';
 import BasePathFix from '../components/BasePathFix';
 
 const SITE_URL = 'https://satitech-official.github.io/cafe-pachmarhi/';
